@@ -1,0 +1,13 @@
+.form-container{
+    margin-top: 3%;
+}
+
+.full{
+    display: block;
+    width: 100%;
+}
+#btn-style{
+    background-color: rgb(50, 122, 35);
+    border: 2px;
+    color:antiquewhite;
+}

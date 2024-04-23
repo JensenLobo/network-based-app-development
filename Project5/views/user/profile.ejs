@@ -1,0 +1,30 @@
+
+<%- include('../partials/header.ejs')%>
+    <div class="container recipes">
+        <h2>Welcome, <%=user.firstName + ' ' + user.lastName%></h2>
+    
+    
+        <%if(events.length){%>
+            <p>You have created the following events</p>
+        <%events.forEach(event=>{%>
+                <a href="/events/<%= event.id%>"><%=event.title%></a>
+                <form>
+                    <button type="submit" formmethod= "GET" formaction="/events/<%= event.id%>/edit" id="btn_edit"><img src="/images/icons8-edit-16.png" alt="Edit Button"></button>
+                    <button type="submit" formmethod= "POST" formaction="/events/<%=event.id%>?_method=DELETE" id="btn_delete"><img src="/images/icons8-delete-16.png" alt="Delete Button"></button>
+                </form>
+        <%});
+        } else{%>
+            <p>You have not created any events</p>
+        <%}%>
+
+        <% if (rsvps.length) {%>
+            <h2>Your RSVPs</h2>
+            <% rsvps.forEach(rsvp=>{%>
+                <a href="/events/<%= rsvp.event %>"><%= rsvp.event.title %></a>
+                <p><%= rsvp.status %></p>
+            <%});%>
+        <%} else{ %>
+                <p>You haven't RSVPed to any events yet</p>
+        <% } %>
+    </div>
+    <%- include('../partials/footer.ejs')%>

@@ -1,0 +1,91 @@
+<%- include('../partials/header.ejs')%>
+
+    <div class="container recipes">
+        <!--<%if(events.length){%>
+            <p>Please select an event</p>
+            <%events.forEach(event=>{%>
+                <a href = "/events/<%= event.id%>"><p><%= event.title%></p></a>
+            <% });
+        } else {%>
+            <p><strong>There are no upcoming events available.</strong></p>
+            <p>Please come check another time.</p>
+        <%}%>-->
+
+        
+
+        <%if(events.length) {%>
+            
+            <div class="">
+                <% let recipes = events.filter(event => { 
+                return event.category === 'American Recipe' %>
+                <%})%>
+                <% if(recipes.length){%>
+                    <h1 class="">American Recipes</h1>
+                <%}%>
+            <ul class="">
+                <% recipes.forEach(event => {%>
+                <li><a href="/events/<%=event.id%>"><%=event.title%></a></li>
+                <%})%>
+            </ul>
+            
+                <% let foreign = events.filter(event => { 
+                return event.category === 'Foreign Recipe' %>
+                <%})%>
+                <% if(foreign.length){%>
+                    <h1 class="">Foreign Recipes</h1>
+                <%}%>
+            <ul class="">
+                <% foreign.forEach(event => {%>
+                <li><a href="/events/<%=event.id%>"><%=event.title%></a></li>
+                <%})%>
+            </ul>
+            
+            
+                <% let QandE = events.filter(event => { 
+                return event.category === 'Quick And Easy' %>
+                <%})%>
+                <% if(QandE.length){%>
+                    <h1 class="">Quick and Easy</h1>
+                <%}%>
+            <ul class="">
+                <% QandE.forEach(event => {%>
+                <li><a href="/events/<%=event.id%>"><%=event.title%></a></li>
+                <%})%>
+            </ul>
+            
+            
+                <% let faves = events.filter(event => { 
+                return event.category === 'Favorites' %>
+                <%})%>
+                <% if(faves.length){%>
+                    <h1 class="">Favorites</h1>
+                <%}%>
+            <ul class=""></ul>
+                <% faves.forEach(event => {%>
+                <li><a href="/events/<%=event.id%>"><%=event.title%></a></li>
+                <%})%>
+            </ul>
+
+            <% let book = events.filter(event => { 
+                return event.category === 'Books' %>
+                <%})%>
+                <% if(book.length){%>
+                    <h1 class="">Books</h1>
+                <%}%>
+            <ul class=""></ul>
+                <% faves.forEach(event => {%>
+                <li><a href="/events/<%=event.id%>"><%=event.title%></a></li>
+                <%})%>
+            </ul>
+            
+            </div>
+            
+            <% } else {%>
+              <h2 class="">
+              <p>There are no events to display.</p>
+              </h2>
+            <%}%>
+
+    </div>
+
+<%- include('../partials/footer.ejs')%>

@@ -1,0 +1,25 @@
+<%- include('../partials/header.ejs')%>
+
+    <div class="container recipes">
+        <!--<%if(events.length){%>
+            <p>Please select an event</p>
+            <%events.forEach(event=>{%>
+                <a href = "/events/<%= event.id%>"><p><%= event.title%></p></a>
+            <% });
+        } else {%>
+            <p><strong>There are no upcoming events available.</strong></p>
+            <p>Please come check another time.</p>
+        <%}%>-->
+
+        <% categories.forEach(category => {%>
+            <h4><%= category %></h4>
+            <ul>
+                <% events.filter(event => event.category == category).forEach(event => { %>
+                    <a href = "/events/<%= event.id%>"><p><%= event.title%></p></a>
+                <% }); %>
+            </ul>
+        <% }); %>
+
+    </div>
+
+<%- include('../partials/footer.ejs')%>

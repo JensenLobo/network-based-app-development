@@ -1,0 +1,22 @@
+.event-container{
+    margin-top: 6.5%;
+    margin-bottom: 5%;
+    margin-left: 15%;
+    margin-right: 12%;
+}
+
+.info-container{
+    margin-left: 15%;
+    margin-right: 15%;
+    flex-wrap: wrap;
+}
+
+.img-container{
+    width: 30%;
+    height: auto;
+    float: left;
+    margin-right: 10px;
+}
+#borders{
+    border: none;
+}

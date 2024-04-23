@@ -1,0 +1,47 @@
+<%- include('../partials/header.ejs')%>
+<div class="container form-container">
+    <form action="/events" method = 'POST' class="new-form" enctype="multipart/form-data">
+      
+        <label for="category">Category</label>
+        <select class="form-control" name="category" required>
+          <option>--Select a Category--</option>
+          <option>American Recipe</option>
+          <option>Foreign Recipe</option>
+          <option>Quick And Easy</option>
+          <option>Favorites</option>
+          <option>Books</option>
+
+        </select>
+      
+        <label>Title</label>
+        <input class="form-control" type="text" placeholder="Title" id="title" name="title" required>
+
+        <label>Host</label>
+        <input class="form-control" type="text" placeholder="Host" id="hostName" name="hostName" required>
+      
+        <label>Details</label>
+        <textarea class="form-control" rows="3" placeholder="Description" id="details" name="details" required></textarea>
+      
+        <label>Where</label>
+        <input class="form-control" type="text" placeholder="Location" id="location" name="location" required>
+      
+        <label>Start</label>
+        <input type="datetime-local" id="startTime" class="form-control" name="startTime" required>
+
+        <label>End</label>
+        <input type="datetime-local" class="form-control" id="endTime" name="endTime" required>
+  
+        <label>Image</label>
+        <input class="form-control" type="file" name="image" required>
+      
+      <br>
+      <div>
+        <!--<button type="submit" class="btn full" id="btn-style">Submit</button>-->
+        <input type="submit" value="Submit">
+      </div>
+  
+    </form>
+  </div>
+
+
+<%- include('../partials/footer.ejs')%>

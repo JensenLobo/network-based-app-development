@@ -1,0 +1,29 @@
+{
+  "name": "module7",
+  "version": "1.0.0",
+  "description": "Intergrate MongoDB using Native Node Driver",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JensenLobo/FirstMongoDB.git"
+  },
+  "keywords": [
+    "MongoDb"
+  ],
+  "author": "Jensen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JensenLobo/FirstMongoDB/issues"
+  },
+  "homepage": "https://github.com/JensenLobo/FirstMongoDB#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "mongodb": "^6.1.0",
+    "morgan": "^1.10.0"
+  }
+}
